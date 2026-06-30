@@ -25,16 +25,12 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 import mne
-from mne.datasets import sample
 
 print(__doc__)
-
-data_path = sample.data_path()
-
 # %%
 # Load sample subject data
-meg_path = data_path / "MEG" / "sample"
-raw = mne.io.read_raw_fif(meg_path / "sample_audvis_raw.fif")
+meg_path = "../data/sample_audvis_fit"
+raw = mne.io.read_raw_fif(meg_path / "raw.fif")
 raw = raw.pick(picks=["eeg", "eog", "ecg", "stim"], exclude="bads").load_data()
 events = mne.find_events(raw)
 raw.set_eeg_reference(projection=True).apply_proj()
