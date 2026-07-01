@@ -29,11 +29,11 @@ import pandas as pd
 
 import mne
 
-root = mne.datasets.sample.data_path() / "MEG" / "sample"
-raw_file = root / "sample_audvis_filt-0-40_raw.fif"
+root = "../data/sample_audvis_fit"
+raw_file = root / "raw.fif"
 raw = mne.io.read_raw_fif(raw_file, preload=False)
 
-events_file = root / "sample_audvis_filt-0-40_raw-eve.fif"
+events_file = root / "eve.fif"
 events = mne.read_events(events_file)
 
 raw.crop(tmax=90)  # in seconds (happens in-place)
