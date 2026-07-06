@@ -24,10 +24,9 @@ we'll crop the raw data from ~4.5 minutes down to 90 seconds.
 # %%
 
 import matplotlib.pyplot as plt
+import mne
 import numpy as np
 import pandas as pd
-
-import mne
 
 root = "../data/sample_audvis_fit"
 raw_file = root / "raw.fif"

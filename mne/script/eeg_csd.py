@@ -22,15 +22,14 @@ or more distinct topography, reducing the negative impact of volume conduction.
 # sphinx_gallery_thumbnail_number = 6
 
 import matplotlib.pyplot as plt
-import numpy as np
-
 import mne
+import numpy as np
 
 print(__doc__)
 # %%
 # Load sample subject data
-meg_path = "../data/sample_audvis_fit"
-raw = mne.io.read_raw_fif(meg_path / "raw.fif")
+meg_path = "../data/sample_audvis_fit/raw.fif"
+raw = mne.io.read_raw_fif(meg_path)
 raw = raw.pick(picks=["eeg", "eog", "ecg", "stim"], exclude="bads").load_data()
 events = mne.find_events(raw)
 raw.set_eeg_reference(projection=True).apply_proj()

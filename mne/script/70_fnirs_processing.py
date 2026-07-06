@@ -21,9 +21,8 @@ Here we will work with the :ref:`fNIRS motor data <fnirs-motor-dataset>`.
 from itertools import compress
 
 import matplotlib.pyplot as plt
-import numpy as np
-
 import mne
+import numpy as np
 
 fnirs_data_folder = mne.datasets.fnirs_motor.data_path()
 fnirs_cw_amplitude_dir = fnirs_data_folder / "Participant-1"
